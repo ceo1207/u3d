@@ -5,6 +5,7 @@ public class p5 : MonoBehaviour
 {
 
     public Texture img;
+    // can use a field to load resource, also can use Resource.load
     private float screen;
     private float itemSize;
     void Start()
