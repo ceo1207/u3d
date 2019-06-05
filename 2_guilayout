@@ -1,0 +1,34 @@
+// create a 4*4 button grid using a provided image
+using UnityEngine;
+
+public class p5 : MonoBehaviour
+{
+
+    public Texture img;
+    private float screen;
+    private float itemSize;
+    void Start()
+    {
+        screen = Screen.width / 2;
+        itemSize = 100;
+    }
+    void OnGUI()
+    {
+        GUILayout.BeginArea(new Rect(screen - 2*itemSize, 100, itemSize*4, itemSize*4));
+        GUILayout.BeginVertical();
+        for (int i1 = 0;i1<4;i1++)
+        {
+            GUILayout.BeginHorizontal();
+            for (int i2=0;i2<4;i2++)
+            {
+                if(GUILayout.Button(img, GUILayout.Width(itemSize), GUILayout.Height(itemSize)))
+                {
+                    print("click");
+                }
+            }
+            GUILayout.EndHorizontal();
+        }
+        GUILayout.EndVertical();
+        GUILayout.EndArea();
+    }
+}
